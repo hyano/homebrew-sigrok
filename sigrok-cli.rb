@@ -3,14 +3,14 @@
 class SigrokCli < Formula
   desc "Command-line frontend for sigrok"
   homepage "https://sigrok.org/wiki/Sigrok-cli"
-  url "https://sigrok.org/download/source/sigrok-cli/sigrok-cli-0.7.0.tar.gz"
-  sha256 "5669d968c2de3dfc6adfda76e83789b6ba76368407c832438cef5e7099a65e1c"
+  url "https://sigrok.org/download/source/sigrok-cli/sigrok-cli-0.7.2.tar.gz"
+  sha256 "71d0443f36897bf565732dec206830dbea0f2789b6601cf10536b286d1140ab8"
 
   depends_on "glib" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
-  depends_on "tnishinaga/sigrok/libsigrok"
-  depends_on "tnishinaga/sigrok/libsigrokdecode"
+  depends_on "hyano/sigrok/libsigrok"
+  depends_on "hyano/sigrok/libsigrokdecode"
 
   def install
     system "./configure", "--prefix=#{prefix}"
