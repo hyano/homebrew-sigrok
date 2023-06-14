@@ -4,10 +4,12 @@ class Libsigrok < Formula
   desc "Shared library of drivers for logic analyzers and input/output files"
   homepage "https://sigrok.org/wiki/Libsigrok"
   url "https://sigrok.org/download/source/libsigrok/libsigrok-0.5.2.tar.gz"
+  head "git://sigrok.org/libsigrok"
   sha256 "4d341f90b6220d3e8cb251dacf726c41165285612248f2c52d15df4590a1ce3c"
 
   depends_on "automake" => :build
   depends_on "autoconf" => :build
+  depends_on "libtool" => :build
   depends_on "doxygen" => :build
   depends_on "make" => :build
   depends_on "gettext" => [:buld, :test]
@@ -26,6 +28,7 @@ class Libsigrok < Formula
 
   def install
     # system "sed", "-i", "-e", "s/glibmm-2.4/glibmm-2.68/g", "configure"
+    system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}", "--disable-java", "--enable-bindings", "--enable-cxx", "CXXFLAGS=-std=c++17"
     system "make"
     system "make", "install"
