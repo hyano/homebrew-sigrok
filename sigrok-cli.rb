@@ -12,8 +12,9 @@ class SigrokCli < Formula
   depends_on "glib" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
-  depends_on "hyano/sigrok/libsigrok"
-  depends_on "hyano/sigrok/libsigrokdecode"
+  depends_on "libserialport" => :build
+  depends_on "hyano/sigrok/libsigrok" => :build
+  depends_on "hyano/sigrok/libsigrokdecode" => :build
 
   def install
     system "./autogen.sh"
