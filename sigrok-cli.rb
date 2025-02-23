@@ -12,7 +12,12 @@ class SigrokCli < Formula
   depends_on "glib" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on "glib" => :build
+  depends_on "glibmm@2.66" => :build
+  depends_on "libftdi" => :build
   depends_on "libserialport" => :build
+  depends_on "libusb" => :build
+  depends_on "libzip" => :build
   depends_on "hyano/sigrok/libsigrok" => :build
   depends_on "hyano/sigrok/libsigrokdecode" => :build
 
