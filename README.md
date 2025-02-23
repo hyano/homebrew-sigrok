@@ -1,6 +1,6 @@
 brew tap hyano/sigrok
-brew install --HEAD libsigrok
-brew install sigrok-firmware-fx2lafw
-brew install --HEAD libsigrokdecode
-brew install sigrok-cli
-brew install --HEAD pulseview
+brew install --HEAD hyano/sigrok/libsigrok
+brew install --HEAD hyano/sigrok/sigrok-firmware-fx2lafw
+brew install --HEAD hyano/sigrok/libsigrokdecode
+brew install --HEAD hyano/sigrok/sigrok-cli
+brew install --HEAD hyano/sigrok/pulseview
