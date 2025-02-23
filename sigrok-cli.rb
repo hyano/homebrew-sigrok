@@ -22,6 +22,8 @@ class SigrokCli < Formula
   depends_on "hyano/sigrok/libsigrokdecode" => :build
 
   def install
+    ENV["PYTHON3"] = Formula["python@3.12"].opt_bin/"python3"
+
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
     system "make"
