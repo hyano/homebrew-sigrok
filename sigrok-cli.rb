@@ -20,9 +20,10 @@ class SigrokCli < Formula
   depends_on "libzip" => :build
   depends_on "hyano/sigrok/libsigrok" => :build
   depends_on "hyano/sigrok/libsigrokdecode" => :build
+  depends_on "python@3.13"
 
   def install
-    ENV["PYTHON3"] = Formula["python@3.12"].opt_bin/"python3"
+    ENV["PYTHON3"] = Formula["python@3.13"].opt_bin/"python3"
 
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
